@@ -1,0 +1,135 @@
+[
+  {
+    "name": "exampleBank",
+    "accounts": [
+      {
+        "email": "testCustomer1@gmail.com",
+        "budget": 1000,
+        "id": "87a43f23-9ff2-4ad0-b05f-8f432542a51c",
+        "transfers": []
+      },
+      {
+        "email": "testCustomer2@gmail.com",
+        "budget": 980,
+        "id": "e1ef9a2d-d745-456a-945b-f9e4126150c5",
+        "transfers": [
+          {
+            "id": "2260b69b-cffc-422e-bf02-99c410d8616d",
+            "type": "IN",
+            "amount": 50,
+            "date": "2021/2/1",
+            "hour": "10/51",
+            "isExternal": true,
+            "commission": 1
+          },
+          {
+            "id": "84df96e5-2bed-454c-96fe-d5eeb100e794",
+            "type": "OUT",
+            "amount": 50,
+            "date": "1/2/2021",
+            "hour": "20/43",
+            "isExternal": true,
+            "commission": 0
+          },
+          {
+            "id": "5eb5d674-adf7-42f8-bd89-b56c67d69401",
+            "type": "IN",
+            "amount": 50,
+            "date": "1/2/2021",
+            "hour": "23/47",
+            "isExternal": true,
+            "commission": 0
+          },
+          {
+            "id": "46396497-bbd7-4b1a-908f-c909f1aff02b",
+            "type": "OUT",
+            "amount": 50,
+            "date": "2/2/2021",
+            "hour": "0/8",
+            "isExternal": false,
+            "commission": 0
+          },
+          {
+            "id": "46396497-bbd7-4b1a-908f-c909f1aff02b",
+            "type": "IN",
+            "amount": 50,
+            "date": "2/2/2021",
+            "hour": "0/8",
+            "isExternal": false,
+            "commission": 0
+          }
+        ]
+      }
+    ],
+    "commission": 1,
+    "fund": 3,
+    "id": "02e1b7d0-549b-4f55-9126-2b426ba0a248"
+  },
+  {
+    "name": "exampleBank2",
+    "accounts": [
+      {
+        "email": "testCustomer3@gmail.com",
+        "budget": 1050,
+        "id": "c8ba2781-ba68-4ca3-910d-ac789eed1016",
+        "transfers": [
+          {
+            "id": "eb9999f8-2583-4fe8-93fd-a9c911aca5f5",
+            "type": "IN",
+            "amount": 50,
+            "date": "2021/2/1",
+            "hour": "10/22",
+            "isExternal": false,
+            "commission": 0
+          }
+        ]
+      },
+      {
+        "email": "testCustomer4@gmail.com",
+        "budget": 797,
+        "id": "30a59508-16d1-4e5e-9b28-6693c82b9662",
+        "transfers": [
+          {
+            "id": "eb9999f8-2583-4fe8-93fd-a9c911aca5f5",
+            "type": "OUT",
+            "amount": 50,
+            "date": "2021/2/1",
+            "hour": "10/22",
+            "isExternal": false,
+            "commission": 0
+          },
+          {
+            "id": "2260b69b-cffc-422e-bf02-99c410d8616d",
+            "type": "OUT",
+            "amount": 50,
+            "date": "2021/2/1",
+            "hour": "10/51",
+            "isExternal": true,
+            "commission": 1
+          },
+          {
+            "id": "84df96e5-2bed-454c-96fe-d5eeb100e794",
+            "type": "IN",
+            "amount": 50,
+            "date": "1/2/2021",
+            "hour": "20/43",
+            "isExternal": true,
+            "commission": 0
+          },
+          {
+            "id": "5eb5d674-adf7-42f8-bd89-b56c67d69401",
+            "type": "OUT",
+            "amount": 50,
+            "date": "1/2/2021",
+            "hour": "23/47",
+            "isExternal": true,
+            "commission": 0
+          }
+        ]
+      }
+    ],
+    "commission": 1,
+    "fund": 0,
+    "id": "708bdfd0-9be0-4a68-a188-6397f0b02179"
+  }
+]

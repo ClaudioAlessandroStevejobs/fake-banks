@@ -1,0 +1,47 @@
+[
+  {
+    "email": "super-admin@gmail.com",
+    "password": "180161386",
+    "role": "SUPER_ADMIN",
+    "token": "501dc465-47a3-4902-8416-aa4d95e06cc3"
+  },
+  {
+    "email": "adminExampleBank@gmail.com",
+    "password": "193361109",
+    "role": "ADMIN",
+    "bankId": "02e1b7d0-549b-4f55-9126-2b426ba0a248",
+    "token": "8d2c605d-c575-4628-9f44-792fabf38201"
+  },
+  {
+    "email": "adminExampleBank2@gmail.com",
+    "password": "193361109",
+    "role": "ADMIN",
+    "bankId": "708bdfd0-9be0-4a68-a188-6397f0b02179"
+  },
+  {
+    "email": "testCustomer1@gmail.com",
+    "password": "193361109",
+    "role": "CUSTOMER",
+    "bankId": "02e1b7d0-549b-4f55-9126-2b426ba0a248"
+  },
+  {
+    "email": "testCustomer2@gmail.com",
+    "password": "193361109",
+    "role": "CUSTOMER",
+    "bankId": "02e1b7d0-549b-4f55-9126-2b426ba0a248",
+    "token": "56729026-e997-4927-a4e9-8542cec5d396"
+  },
+  {
+    "email": "testCustomer3@gmail.com",
+    "password": "193361109",
+    "role": "CUSTOMER",
+    "bankId": "708bdfd0-9be0-4a68-a188-6397f0b02179"
+  },
+  {
+    "email": "testCustomer4@gmail.com",
+    "password": "193361109",
+    "role": "CUSTOMER",
+    "bankId": "708bdfd0-9be0-4a68-a188-6397f0b02179",
+    "token": "a519e227-2939-42be-b92f-f7ed6a2ed622"
+  }
+]
