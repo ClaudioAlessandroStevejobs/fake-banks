@@ -197,7 +197,7 @@ export const transfer = (
 		commission
 	}
 	
-	const few = banks.map((b: Bank) => { 
+	banks.map((b: Bank) => { 
 		if (b.getId() === bankId) {
 			if (isExternal) commission = b.getCommission()
 			b.getAccounts().map((account : Account) => {
