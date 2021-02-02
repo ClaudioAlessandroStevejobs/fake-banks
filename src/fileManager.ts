@@ -181,54 +181,57 @@ export const transfer = (
 	otherBankId: string,
 	amount: number,
 	isExternal: boolean
-): void => {
+  ): void => {
 	const transferId = v4();
 	const d = new Date(Date.now());
 	console.log();
 	let banks = (readFile(banksURI)) as Bank[];
-	let commission : number = 0;
-	const transfer : Transfer = {
-		id: transferId,
-		type: "OUT",
-		amount,
-		date: `${d.getDay()}/${d.getMonth()+1}/${d.getFullYear()}`,
-		hour: `${d.getHours()}/${d.getMinutes()}`,
-		isExternal,
-		commission
+	let commission: number = 0;
+	const transfer: Transfer = {
+	  id: transferId,
+	  type: "OUT",
+	  amount,
+	  date: `${d.getDay()}/${d.getMonth() + 1}/${d.getFullYear()}`,
+	  hour: `${d.getHours()}/${d.getMinutes()}`,
+	  isExternal,
+	  commission
 	}
-	
-	banks.map((b: Bank) => { 
-		if (b.getId() === bankId) {
-			if (isExternal) commission = b.getCommission()
-			b.getAccounts().map((account : Account) => {
-				if (account.getId() === accountId) { 
-					account.setBudget(account.getBudget() - amount - commission)
-					account.addTransfer(transfer);
-					return;
-				}
-			})
+  
+	banks.map((b: Bank) => {
+	  if (b.getId() === bankId) {
+		if (isExternal) {
+		  commission = b.getCommission()
+		  b.setFund(b.getFund() + commission)
 		}
-		return b;
+		b.getAccounts().map((account: Account) => {
+		  if (account.getId() === accountId) {
+			account.setBudget(account.getBudget() - amount - commission)
+			account.addTransfer({
+			  ...transfer,
+			  commission,
+			});
+			return;
+		  }
+		})
+	  }
+	  return b;
 	})
-
+  
 	banks = banks.map((b: Bank) => {
-		const {getId: getBankId, setFund, getFund, getAccounts} = b;
-		if(getBankId() === otherBankId) {
-			if (isExternal) setFund(getFund() + commission)
-			getAccounts().map(({
-				getId, getBudget, setBudget, addTransfer
-			} : Account) => {
-				if (getId() === recipientId) { 
-					setBudget(getBudget() + amount)
-					addTransfer({
-						...transfer,
-						type: 'IN',
-					});
-					return;
-				}
-			})	
-		}
-		return b;
+	  if (b.getId() === otherBankId) {
+		b.getAccounts().map((a: Account) => {
+		  if (a.getId() === recipientId) {
+			a.setBudget(a.getBudget() + amount)
+			a.addTransfer({
+			  ...transfer,
+			  type: 'IN',
+			  commission
+			});
+			return;
+		  }
+		})
+	  }
+	  return b;
 	})
 	fs.writeFileSync(banksURI, JSON.stringify(banks, null, 2))
-}
+  }
