@@ -1,7 +1,6 @@
 import {Account} from './Account';
 import { v4 } from 'uuid';
 import { User } from '../typings/User';
-
 export class Bank {
     constructor(
         private name : string, 
